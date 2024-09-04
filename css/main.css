@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+.section_inner {
+  padding: 50px 10% 30px;
+}
+.section_title {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+/* 画像を正円に切り取り */
+.coffee_menu_image {
+  /* サイズを親の20%に縮小 */
+  width: 20%;
+  /* 円にする */
+  border-radius: 50%; 
+}
+img .float_item {
+  width: 200px;
+  right: 20px;
+  position: fixed;
+}
+/* float解除のclearプロパティ適用
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.float_item {
+  float: left;
+  /* 幅と高さを追加 */
+  /* width: 100px;
+  height: 100px;
+  margin-right: 10px; /* 画像とテキストの間に余白を追加 */
+/* } */ 
+.key {
+  height: 500px;
+  background: center / cover no-repeat url("../images/sample_key.jpg");
+  font-family: 'Noto Serif JP', serif;
+  font-weight: bold;
+}
+.key h1{
+  font-size: 2.5rem;
+}
+.menu_title {
+  display: inline-block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  color: #42210b;
+  border-bottom: solid #42210b 1px;
+  margin-bottom: 20px;
+}
+.center {
+  text-align: center;
+}
+
+.header_nav {
+  background:  rgba(0,0,0,.6);
+  /* rgbaのalphaは色の透明度を表す。0が透明〜1が不透明 */
+  background:  rgba(0,0,0,.6);
+  /* global_nav といっしょに横並びにする */
+  display: flex;
+  height: 60px;
+  /* クラス内のロゴ、メニューリストを両端に配置 */
+  justify-content: space-between;
+  /* 親要素の高さ一杯に表示 */
+  align-items: stretch;
+  /* グローバルナビゲーションをスクロールしても固定 */
+  position: fixed;
+  /*  */
+  top: 0;
+  width: 100%;
+}
+.global_nav {
+    /* 子要素の各メニューに */
+    display: flex;
+    /* 親要素の高さ一杯に表示 */
+    align-items: stretch;
+  }
+.global_nav_item {
+  color: #fff;
+  text-decoration: none;
+  /* 親要素liで子要素aに対して設定 */
+  /* リストを縦方向に中央揃えするために必要 */
+  display: flex;
+  /* a要素の各メニューは縦方向に中央揃え */
+  align-items: center;
+  padding: 0 20px;
+}
+.global_nav_item a {
+  color: #fff;
+  text-decoration: none;
+  height: 100%; /* 親要素liの高さに引き伸ばす */
+  /* 各メニューの左右に余白をもたせる */
+  padding: 0 20px;
+}
+.global_nav_item:hover {
+  background: #fff;
+  color: #42210b;
+}
+.logo {
+    width: 120px;
+    display: flex;
+    /* ロゴは縦方向に中央揃え */
+    align-items: center;
+  }
+  /*  */
+  .logo img{
+    /* a要素内の画像サイズをa要素に合わせる */
+    width: 100%;
+  }
