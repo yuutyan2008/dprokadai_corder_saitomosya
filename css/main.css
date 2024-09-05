@@ -1,39 +1,84 @@
 @charset "utf-8";
+html {
+  height: 100%;
+}
+body {
+  position: relative;
+  padding-bottom: 75px;
+  min-height: 100%;
+}
+li {
+  list-style: none;
+}
+p, ul {
+  margin: 0;
+  padding: 0;
+}
+div,li {
+  box-sizing: border-box;
+}
+.header_nav {
+  background: linear-gradient(90deg, #fff 20%, rgba(0,0,0,.6) 60%);
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: stretch;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.global_nav_item {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.global_nav_item:hover {
+  background: #fff;
+  color: #42210b;
+}
+.global_nav {
+  display: flex;
+  align-items: stretch;
+}
+.logo {
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  width: 100%;
+}
 
 .section_inner {
-  padding: 50px 10% 30px;
+  padding: 50px 10% 80px;
 }
-.section_title {
-  font-family: 'Noto Serif JP', serif;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 50px;
+
+/* 課題１ */
+.text_center {
+  margin-top: 150px;
 }
-/* 画像を正円に切り取り */
-.coffee_menu_image {
-  /* サイズを親の20%に縮小 */
-  width: 20%;
-  /* 円にする */
-  border-radius: 50%; 
+/* 課題２ */
+.text_image {
+  display: flex;
+  justify-content: center;/* 横並び要素を中央揃え */
+  align-items: flex-start;/* 横並び要素を上揃え */
 }
-img .float_item {
-  width: 200px;
-  right: 20px;
-  position: fixed;
+
+#sample_concept_img {
+  margin-left: 20px;    /* 画像とテキストの間に余白を設定 */
+  width: 35%;          /* 画像の幅を指定（任意で変更可能） */
 }
-/* float解除のclearプロパティ適用
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
+/* 課題3 */  
+#menu_background_img{
+  background-image: url("../images/sample_menu_bg.jpg"); /* 背景画像を設定 */
+  background-attachment: fixed;   /* 背景を固定 */
+  background-size: cover;         /* 背景がセクション全体をカバー */
+  background-position: center;    /* 画像の位置を中央に設定 */
+  padding: 50px 0;               /* 上下50px左右0に余白を設定 */
 }
-.float_item {
-  float: left;
-  /* 幅と高さを追加 */
-  /* width: 100px;
-  height: 100px;
-  margin-right: 10px; /* 画像とテキストの間に余白を追加 */
-/* } */ 
+
 .key {
   height: 500px;
   background: center / cover no-repeat url("../images/sample_key.jpg");
@@ -42,6 +87,13 @@ img .float_item {
 }
 .key h1{
   font-size: 2.5rem;
+}
+
+.section_title {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
 }
 .menu_title {
   display: inline-block;
@@ -55,58 +107,109 @@ img .float_item {
   text-align: center;
 }
 
-.header_nav {
-  background:  rgba(0,0,0,.6);
-  /* rgbaのalphaは色の透明度を表す。0が透明〜1が不透明 */
-  background:  rgba(0,0,0,.6);
-  /* global_nav といっしょに横並びにする */
+/* 課題３ */
+.menu-item {
   display: flex;
-  height: 60px;
-  /* クラス内のロゴ、メニューリストを両端に配置 */
+  flex-wrap: wrap;  /* アイテムが横並びになるように設定 */
+  gap: 20px;        /* メニュー項目間に余白を追加 */
+  /* list-style: none; li のデフォルトマーカーを非表示 */
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.menu-item-list {
+  display: flex;
+  flex-basis: 49%;    /* li要素の幅を49%に設定 */
+  box-sizing: border-box; /* パディングやボーダーを含めて計算 */
+  background-color: #f9f9f9;
   justify-content: space-between;
-  /* 親要素の高さ一杯に表示 */
-  align-items: stretch;
-  /* グローバルナビゲーションをスクロールしても固定 */
-  position: fixed;
-  /*  */
-  top: 0;
+}
+
+.menu-description {
+  flex-basis: 55%;   /* 画像の幅を55%に設定 */
+  box-sizing: border-box;
+}
+
+.menu-content {
+  flex-basis: 45%;   /* テキスト部分の幅を45%に設定 */
+  background-color: #f9f9f9;
+  padding: 20px;     /* パディングで余白を確保 */
+  box-sizing: border-box; /* パディングを含めた幅を計算 */
+}
+
+.menu-item-list img {
+  max-width: 100%;   /* 画像の幅を親要素に合わせる */
+  height: auto;
+}
+.drink-item {
+  display: flex;
+  flex-flow: row wrap; /* アイテムが横方向に折り返し */
+  gap: 15px;        /* メニュー項目間に余白を追加 */
+  /* list-style: none; li のデフォルトマーカーを非表示 */
+  padding: 20px;
+  margin: 20px;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.drink-item-list {
+  display: flex;
+  flex-basis: 49%;    /* li要素の幅を49%に設定 */
+  box-sizing: border-box; /* パディングやボーダーを含めて計算 */
+  background-color: #f9f9f9;
+
+}
+.drink-content{
+  flex-basis: 80%;   /* テキスト部分の幅を45%に設定 */
+  background-color: #f9f9f9;
+  padding: 20px;     /* パディングで余白を確保 */
+  box-sizing: border-box; /* パディングを含めた幅を計算 */
+}
+.drink-description {
+  flex-basis: 20%;
+  width: 100%;
+  height: 100%; 
+}
+.drink-description img {
+  width: 100%;
+  height: 100%; 
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.section_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+/* 課題５ */
+.shop_info {
+  display: flex;
+}
+.shop_info dt{
+  flex-basis: 80px;
+}
+iframe {
   width: 100%;
 }
-.global_nav {
-    /* 子要素の各メニューに */
-    display: flex;
-    /* 親要素の高さ一杯に表示 */
-    align-items: stretch;
-  }
-.global_nav_item {
-  color: #fff;
-  text-decoration: none;
-  /* 親要素liで子要素aに対して設定 */
-  /* リストを縦方向に中央揃えするために必要 */
+
+footer {
+  background-color: #251e19;
+  color: #f9f9f9;
+  text-align: center;
+  height: 75px;
+}
+footer ul, a{
   display: flex;
-  /* a要素の各メニューは縦方向に中央揃え */
-  align-items: center;
-  padding: 0 20px;
-}
-.global_nav_item a {
-  color: #fff;
+  color: #f9f9f9;
   text-decoration: none;
-  height: 100%; /* 親要素liの高さに引き伸ばす */
-  /* 各メニューの左右に余白をもたせる */
-  padding: 0 20px;
+
+  justify-content: center; 
 }
-.global_nav_item:hover {
-  background: #fff;
-  color: #42210b;
+footer li img {
+  width: 50px; /* 画像の幅を調整 */
+  height: auto; /* 画像の高さを自動調整 */
+  margin-right: 20px;
 }
-.logo {
-    width: 120px;
-    display: flex;
-    /* ロゴは縦方向に中央揃え */
-    align-items: center;
-  }
-  /*  */
-  .logo img{
-    /* a要素内の画像サイズをa要素に合わせる */
-    width: 100%;
-  }
