@@ -1,11 +1,17 @@
 @charset "utf-8";
 html {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+
 }
 body {
   position: relative;
-  padding-bottom: 75px;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
 }
 li {
   list-style: none;
@@ -52,7 +58,7 @@ div,li {
 }
 
 .section_inner {
-  padding: 50px 10% 80px;
+  flex-grow: 1; /* コンテンツを画面いっぱいに拡張する */
 }
 
 /* 課題１ */
@@ -110,7 +116,6 @@ div,li {
 /* 課題３ */
 .menu-item {
   display: flex;
-  flex-wrap: wrap;  /* アイテムが横並びになるように設定 */
   gap: 20px;        /* メニュー項目間に余白を追加 */
   /* list-style: none; li のデフォルトマーカーを非表示 */
   padding: 0;
@@ -139,7 +144,7 @@ div,li {
 }
 
 .menu-item-list img {
-  max-width: 100%;   /* 画像の幅を親要素に合わせる */
+
   height: auto;
 }
 .drink-item {
@@ -194,21 +199,42 @@ div,li {
 iframe {
   width: 100%;
 }
-
 footer {
   background-color: #251e19;
-  color: #f9f9f9;
-  text-align: center;
-  height: 75px;
+    height: 75px;
+    /* 親要素のレイアウトに従う */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #f9f9f9;
+    justify-content: center; 
+    text-align: center;
+    padding: 20px 0; /* フッターの内側に余白を追加 */
+    flex-shrink: 0; /* フッターが縮まらないように設定 */
+  
 }
-footer ul, a{
-  display: flex;
-  color: #f9f9f9;
-  text-decoration: none;
 
+.footer-list {
+  display: flex;
+  flex-direction: row;
+  /* color: #f9f9f9; */
   justify-content: center; 
+  padding: 10px 0;
+  align-items: center;          /* 垂直方向に中央揃え */
+
 }
-footer li img {
+.footer-list li {
+  margin: 0 15px; /* リストアイテム間のスペースを確保 */
+  text-align: center;
+  color: #f9f9f9;
+}
+.footer-list a {
+  color: #ffffff;         /* 文字の色を白に設定 */
+  text-decoration: none;  /* リンクの下線を削除 */
+}
+.footer-list img {
+
   width: 50px; /* 画像の幅を調整 */
   height: auto; /* 画像の高さを自動調整 */
   margin-right: 20px;
